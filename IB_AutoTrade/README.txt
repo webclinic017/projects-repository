@@ -1,8 +1,8 @@
-This project was completed to automate signal generation, monitoring and execution of trade positions using the Interactive Brokers TradersWorkStation (TWS) API. 
+This project was completed to automate signal generation, monitoring and execution of trade positions using the Interactive Brokers TradersWorkStation (TWS) API. This project is designed to be rerun incrementally, in my case, hourly in line with exchange operating hours. I have achieved this through the use of task scheduler (MS Win 10).
 
 In it's current form, the projects calls on 6 scripts:
 
-  Portfolio_Monitor.py - The highest level script designed to set the security parameters to be monitored. This script will call AutoTrade.py after parameter specification.
+  Portfolio_Monitor.py - The highest level script designed to set the security parameters to be monitored. This script will call AutoTrade.py after security parameter specification.
 
   AutoTrade.py - This script provides the core functionality for the program. This script will call price data collection and signal calculation, account data, trade sizing, and trade order execution scripts based on signal event. Ensure that unique account parameters are specified here.
 
