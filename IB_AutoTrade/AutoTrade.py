@@ -149,10 +149,10 @@ frequency = 'hour'
 # OR frequency = 'min'
 backtestlength = '1 Y'
 
-# 1b. Set Account Parameters
-accountName = "DU2821527"
-port = 7497
-clientId = 101
+# 1b. Set Account Parameters - PLEASE SET YOUR IB ACCOUNT PARAMETERS HERE
+accountName = ""
+port = 
+clientId = 
 
 Signal(symbol, secType, exchange, primeExchange, currency, frequency, backtestlength, accountName, port, clientId, plot)
 readPositions(accountName, port, clientId)
@@ -169,11 +169,6 @@ portval = accvalue[accvalue['key']=='AvailableFunds']['value'].values[0]
 pos_cost = float(portval)*pos_exposure
 lastprice = tradedata['Close'].iloc[-1]
 totalQuantity = abs(round(pos_cost/lastprice))
-
-
-# # Rebalance
-# if totalQuantity > list(Portfolio[Portfolio['Symbol']==symbol]['Position'])[0]:
-# 	tQ2 = totalQuantity - (list(Portfolio[Portfolio['Symbol']==symbol]['Position'])[0])
 
 
 
